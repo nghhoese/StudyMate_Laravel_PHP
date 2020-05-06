@@ -1,0 +1,17 @@
+﻿<Window x:Class="NinjaManagerFinal.View.AddNinja"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NinjaManagerFinal.View"
+        DataContext="{Binding AddNinjaVM, Source={StaticResource Locator}}"
+        mc:Ignorable="d"
+        Title="AddNinja" Height="198.387" Width="244.732">
+    <Grid Margin="0,0,2,0">
+        <Label Content="Add Ninja" HorizontalAlignment="Left" Height="43" Margin="27,19,0,0" VerticalAlignment="Top" Width="134" FontSize="24"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Text="{Binding Ninja.Name, Mode=OneWayToSource}" Margin="27,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="24,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.103" Width="54"/>
+        <Button Content="Add" Command="{Binding AddNinja}" HorizontalAlignment="Left" Height="30" Margin="27,110,0,0" VerticalAlignment="Top" Width="62" />
+
+    </Grid>
+</Window>

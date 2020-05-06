@@ -1,0 +1,25 @@
+﻿<Window x:Class="NinjaManagerFinal.View.EditItemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NinjaManagerFinal.View"
+        mc:Ignorable="d"
+        DataContext="{Binding EditItemVM, Source={StaticResource Locator}}"
+        Title="EditItemWindow" Height="386.481" Width="205">
+    <Grid Margin="0,0,2,13">
+        <Label Content="Edit Item" HorizontalAlignment="Left" Height="43" Margin="27,19,0,0" VerticalAlignment="Top" Width="134" FontSize="24"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Margin="27,80,0,0" TextWrapping="Wrap" Text="{Binding Shop.SelectedItem.Name}" VerticalAlignment="Top" Width="104" />
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="24,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.103" Width="54"/>
+        <Button Content="Edit" Command="{Binding EditItem}" HorizontalAlignment="Left" Height="30" Margin="24,296,0,0" VerticalAlignment="Top" Width="62" />
+        <Label Content="Price:" HorizontalAlignment="Left" Margin="24,98,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.103" Width="54"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Margin="27,124,0,0" TextWrapping="Wrap" Text="{Binding Shop.SelectedItem.Gold,Mode=TwoWay}" VerticalAlignment="Top" Width="104" />
+        <Label Content="Agility:" HorizontalAlignment="Left" Margin="24,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.103" Width="54"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Margin="27,212,0,0" TextWrapping="Wrap" Text="{Binding Shop.SelectedItem.Strenght,Mode=TwoWay}" VerticalAlignment="Top" Width="104" />
+        <Label Content="Strenght:" HorizontalAlignment="Left" Margin="24,186,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.103" Width="65"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Margin="27,168,0,0" TextWrapping="Wrap" Text="{Binding Shop.SelectedItem.Agility,Mode=TwoWay}" VerticalAlignment="Top" Width="104"/>
+        <Label Content="Intelligence:" HorizontalAlignment="Left" Margin="24,230,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.103" Width="78"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Margin="27,256,0,0" TextWrapping="Wrap" Text="{Binding Shop.SelectedItem.Intelligence,Mode=TwoWay}" VerticalAlignment="Top" Width="104" />
+
+    </Grid>
+</Window>

@@ -1,0 +1,9 @@
+C:\Users\Nick\Documents\GitHub\prog5-ninjamanager-1920-nick_en_kira\NinjaManagerFinal\Database\bin\Debug\Database.dacpac
+C:\Users\Nick\Documents\GitHub\prog5-ninjamanager-1920-nick_en_kira\NinjaManagerFinal\Database\bin\Debug\Database.dll
+C:\Users\Nick\Documents\GitHub\prog5-ninjamanager-1920-nick_en_kira\NinjaManagerFinal\Database\bin\Debug\Database.pdb
+C:\Users\Nick\Documents\GitHub\prog5-ninjamanager-1920-nick_en_kira\NinjaManagerFinal\Database\obj\Debug\Model.xml
+C:\Users\Nick\Documents\GitHub\prog5-ninjamanager-1920-nick_en_kira\NinjaManagerFinal\Database\obj\Debug\refactor.xml
+C:\Users\Nick\Documents\GitHub\prog5-ninjamanager-1920-nick_en_kira\NinjaManagerFinal\Database\obj\Debug\postdeploy.sql
+C:\Users\Nick\Documents\GitHub\prog5-ninjamanager-1920-nick_en_kira\NinjaManagerFinal\Database\obj\Debug\predeploy.sql
+C:\Users\Nick\Documents\GitHub\prog5-ninjamanager-1920-nick_en_kira\NinjaManagerFinal\Database\obj\Debug\Database.dll
+C:\Users\Nick\Documents\GitHub\prog5-ninjamanager-1920-nick_en_kira\NinjaManagerFinal\Database\obj\Debug\Database.pdb

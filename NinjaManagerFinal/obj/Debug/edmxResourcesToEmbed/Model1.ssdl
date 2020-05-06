@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NinjaManagerDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Gear">
+    <Key>
+      <PropertyRef Name="ninja_idninja" />
+      <PropertyRef Name="item_iditem" />
+    </Key>
+    <Property Name="ninja_idninja" Type="int" Nullable="false" />
+    <Property Name="item_iditem" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="iditem" />
+    </Key>
+    <Property Name="iditem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="price" Type="int" Nullable="false" />
+    <Property Name="category_name" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="strenght" Type="int" />
+    <Property Name="intelligence" Type="int" />
+    <Property Name="agility" Type="int" />
+  </EntityType>
+  <EntityType Name="Ninja">
+    <Key>
+      <PropertyRef Name="idninja" />
+    </Key>
+    <Property Name="idninja" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gold" Type="int" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="fk_ninja_has_item_item1">
+    <End Role="Item" Type="Self.Item" Multiplicity="1" />
+    <End Role="Gear" Type="Self.Gear" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="iditem" />
+      </Principal>
+      <Dependent Role="Gear">
+        <PropertyRef Name="item_iditem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ninja_has_item_ninja1">
+    <End Role="Ninja" Type="Self.Ninja" Multiplicity="1" />
+    <End Role="Gear" Type="Self.Gear" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ninja">
+        <PropertyRef Name="idninja" />
+      </Principal>
+      <Dependent Role="Gear">
+        <PropertyRef Name="ninja_idninja" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NinjaManagerDBModelStoreContainer">
+    <EntitySet Name="Gear" EntityType="Self.Gear" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ninja" EntityType="Self.Ninja" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_ninja_has_item_item1" Association="Self.fk_ninja_has_item_item1">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="Gear" EntitySet="Gear" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ninja_has_item_ninja1" Association="Self.fk_ninja_has_item_ninja1">
+      <End Role="Ninja" EntitySet="Ninja" />
+      <End Role="Gear" EntitySet="Gear" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NinjaManagerDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="iditem" />
+    </Key>
+    <Property Name="iditem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="price" Type="Int32" Nullable="false" />
+    <Property Name="category_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="strenght" Type="Int32" />
+    <Property Name="intelligence" Type="Int32" />
+    <Property Name="agility" Type="Int32" />
+    <NavigationProperty Name="Ninja" Relationship="Self.Gear" FromRole="Item" ToRole="Ninja" />
+  </EntityType>
+  <EntityType Name="Ninja">
+    <Key>
+      <PropertyRef Name="idninja" />
+    </Key>
+    <Property Name="idninja" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gold" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Item" Relationship="Self.Gear" FromRole="Ninja" ToRole="Item" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="Gear">
+    <End Role="Item" Type="Self.Item" Multiplicity="*" />
+    <End Role="Ninja" Type="Self.Ninja" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="NinjaManagerDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Item" EntityType="Self.Item" />
+    <EntitySet Name="Ninja" EntityType="Self.Ninja" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="Gear" Association="Self.Gear">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="Ninja" EntitySet="Ninja" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

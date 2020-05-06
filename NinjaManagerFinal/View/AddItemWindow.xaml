@@ -1,0 +1,27 @@
+﻿<Window x:Class="NinjaManagerFinal.View.AddItemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NinjaManagerFinal.View"
+        mc:Ignorable="d"
+        DataContext="{Binding AddItemVM, Source={StaticResource Locator}}"
+        Title="AddItemWindow" Height="459.834" Width="201.629">
+    <Grid Margin="10,0,2,4">
+        <Label Content="Add Item" HorizontalAlignment="Left" Height="43" Margin="27,19,0,0" VerticalAlignment="Top" Width="134" FontSize="24"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Margin="27,80,0,0" TextWrapping="Wrap" Text="{Binding Item.Name, Mode=OneWayToSource}" VerticalAlignment="Top" Width="104" />
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="24,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.103" Width="54"/>
+        <Button Content="Add" Command="{Binding AddItem}" HorizontalAlignment="Left" Height="30" Margin="24,385,0,0" VerticalAlignment="Top" Width="62" />
+        <Label Content="Price:" HorizontalAlignment="Left" Margin="24,98,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.103" Width="54"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Margin="27,124,0,0" TextWrapping="Wrap" Text="{Binding Item.Gold,Mode=OneWayToSource}" VerticalAlignment="Top" Width="104" />
+        <Label Content="Agility:" HorizontalAlignment="Left" Margin="24,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.103" Width="54"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Margin="27,212,0,0" TextWrapping="Wrap" Text="{Binding Item.Strenght,Mode=OneWayToSource}" VerticalAlignment="Top" Width="104" />
+        <Label Content="Strenght:" HorizontalAlignment="Left" Margin="24,186,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.103" Width="65"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Margin="27,168,0,0" TextWrapping="Wrap" Text="{Binding Item.Agility,Mode=OneWayToSource}" VerticalAlignment="Top" Width="104"/>
+        <Label Content="Intelligence:" HorizontalAlignment="Left" Margin="24,230,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.103" Width="78"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Margin="27,256,0,0" TextWrapping="Wrap" Text="{Binding Item.Intelligence,Mode=OneWayToSource}" VerticalAlignment="Top" Width="104" />
+        <ListBox ItemsSource="{Binding Categories}" SelectedItem="{Binding Item.category_name,Mode=TwoWay}" HorizontalAlignment="Left" Height="67" Margin="27,301,0,0" VerticalAlignment="Top" Width="104"/>
+        <Label Content="Categorie:" HorizontalAlignment="Left" Margin="24,274,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.103" Width="78"/>
+
+    </Grid>
+</Window>
